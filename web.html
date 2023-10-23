@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <title id="header">Vallejo/FrontEnd Dev</title>
+    <link rel="icon" href="img/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./Style.css"/>
+</head>
+<body>
+    <div id="general">
+        <nav id="menu">
+            <ul>
+                <li><a id="botton" href="contacto.html" target="_blank"> Contact me!</a></li>
+                <li> <a href="https://www.linkedin.com/in/jonnathan-vallejo-chi/" target="_blank"> <img src="img/LinkedIn_icon_circle.svg.png" alt="linkedin" > </a> </li>
+                <li> <a href="https://github.com/Vallejo004" target="_blank"> <img src="img/github.png" alt="github" > </a> </li>
+            </ul>
+        </nav>
+
+            <nav class="clearfix"></nav>
+
+            <header id="header">
+                <div class="titulo-container">
+                    <h1 class="titulo" onmouseover="animarTitulo(this)" onmouseout="restaurarTitulo(this)">Hi! </h1>
+                    <h1 class="titulo" onmouseover="animarTitulo(this)" onmouseout="restaurarTitulo(this)">I'm Jonnathan</h1>
+                    <h1 class="titulo" onmouseover="animarTitulo(this)" onmouseout="restaurarTitulo(this)">I'm a Web Developer</h1>
+                </div>
+            </header>
+
+            <nav class="clearfix"></nav>
+
+            <div>
+            <h1>About me</h1>
+            <h2>Who I am?</h2>
+            <p> I am an enthusiastic sophmore college student in software and hardware, I have an amazing communication skills and great comprehensive attention.<br> 
+                Also im involving in college activities as clubs, like ALPFA QC and CodeForAll, by helping people with struggles and learning  experience from that,<br>
+                Right now im working on personal proyects and making as much progress that i can, this Web is mi first personal proyect and i will update new content here.
+                  </p>
+                  <div class="image-container ">
+                    
+                    <img src="img de ejemplo/IMG_4451.jpeg" alt="alpfa qc" class="image-slide">
+                    <img src="img de ejemplo/IMG_4452.jpeg" alt="workspace" class="image-slide">
+                </div>
+                <div class="image-buttons">
+                <button id="prev-button"> Anterior Imagen</button>
+                <button id="next-button"> Siguiente Imagen</button>
+                </div>
+        </div>
+    </div>
+
+    <nav class="clearfix"></nav>
+
+    <footer class="footer-color">
+        Todos los derechos reservados &copy; <a>Vallejo - 2023</a>
+    </footer>
+    
+    <script>
+        const titulos = document.querySelectorAll('.titulo');
+    
+        titulos.forEach((titulo) => {
+            titulo.addEventListener('mouseenter', function() {
+                titulo.style.transition = 'color 0.3s, transform 0.3s';
+                titulo.style.color = 'darkred';
+                titulo.style.transform = 'scale(1.1)';
+            });
+    
+            titulo.addEventListener('mouseleave', function() {
+                titulo.style.transition = 'color 0.3s, transform 0.3s';
+                titulo.style.color = '';
+                titulo.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+
+    <script>
+    class ImageSlider {
+        constructor(containerClass) {
+            this.container = document.querySelector('.' + containerClass);
+            this.images = this.container.querySelectorAll('.image-slide');
+            this.currentImageIndex = 0;
+        }
+
+        mostrarImagen(index) {
+            this.images[this.currentImageIndex].style.display = 'none';
+            this.images[index].style.display = 'block';
+            this.currentImageIndex = index;
+        }
+
+        mostrarSiguienteImagen() {
+            const nextIndex = (this.currentImageIndex + 1) % this.images.length;
+            this.mostrarImagen(nextIndex);
+        }
+
+        mostrarImagenAnterior() {
+            const prevIndex = (this.currentImageIndex - 1 + this.images.length) % this.images.length;
+            this.mostrarImagen(prevIndex);
+        }
+    }
+
+    const imageSlider = new ImageSlider('image-container');
+
+    // Mostrar la primera imagen al cargar la página
+    imageSlider.images[imageSlider.currentImageIndex].style.display = 'block';
+
+    const nextButton = document.getElementById('next-button');
+    nextButton.addEventListener('click', () => {
+        imageSlider.mostrarSiguienteImagen();
+    });
+
+    const prevButton = document.getElementById('prev-button');
+    prevButton.addEventListener('click', () => {
+        imageSlider.mostrarImagenAnterior();
+        
+    });
+    </script>
+
+</body>
+</html>
+

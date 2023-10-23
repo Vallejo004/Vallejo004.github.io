@@ -1,0 +1,109 @@
+
+footer{
+    color: #444;
+    text-align: center;
+    width: 100%;
+    padding: 15px;
+    line-height: 15px;
+    border-top: 1px solid #444;
+    font-size: 17px;
+}
+
+body{
+    background-color: #cecccc;
+  }
+
+#general {
+    
+    width: 1200px;
+ 
+    margin: 0px auto;
+}
+
+#usuario form { 
+    margin-bottom: 300px;
+    margin-top: 15px;
+    padding: 20px;
+    height: 100px;
+    text-align: center;
+   }
+
+  #usuario form *{
+    display: block;
+   }
+
+   input[type="text"]{
+    padding: 3px ; 
+    width: 500px;
+    margin: 0px auto;
+
+    text-align: center;
+   }
+
+  input[type="submit"]{
+    background-color: rgb(212, 209, 201);
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 10;
+    border: 2px solid black;
+    cursor: pointer;
+    margin: 2% auto;
+   }
+
+#header{
+    text-align: center;
+    padding: 10px;
+    margin-top: 50px;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#menu ul li {
+    list-style: none;
+    display: block !important;
+    float:right !important;
+    border-right: 1px solid #b3b3b3;
+    font-size: 20px;
+    margin-top: 2px;
+    transition: all 0.3s; 
+    
+    
+}
+
+#menu ul li a{
+    padding: 15px;
+    display: block !important;
+    color: #000000;
+}
+
+#menu ul li:hover{
+    background:rgb(187, 187, 187);
+    cursor: pointer;
+    border-radius: 15px;
+    transform: scale(1.1);
+    margin-top: 20px;
+   
+
+}
+
+
+#menu ul li:hover a{
+    display: block;
+    color: rgb(0, 0, 0);
+   
+       
+    
+}
+#menu ul li img {
+    margin-right: 9px;
+    width: 30px
+
+    
+}
+
+
+.clearfix{
+    float:none;
+    clear: both;
+}
